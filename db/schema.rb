@@ -10,9 +10,29 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_09_29_194026) do
+ActiveRecord::Schema[7.0].define(version: 2022_09_29_200014) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "lodgings", force: :cascade do |t|
+    t.string "home_type"
+    t.integer "total_occupancy"
+    t.string "summary"
+    t.string "address"
+    t.boolean "park_dog"
+    t.boolean "park_cat"
+    t.boolean "bath_service"
+    t.boolean "walk_service"
+    t.boolean "special_care"
+    t.boolean "place_with_pets"
+    t.integer "price"
+    t.integer "animals_taken_care_of"
+    t.date "published_at"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_lodgings_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -29,4 +49,5 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_29_194026) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "lodgings", "users"
 end

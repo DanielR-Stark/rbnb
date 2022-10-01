@@ -1,0 +1,8 @@
+<h2><%= @lodging.home_type %></h2>
+<p><%= @lodging.total_occupancy %></p>
+<p><%= @lodging.summary%></p>
+
+<%= link_to "Delete",
+  lodging_path(@lodging),
+  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+%>

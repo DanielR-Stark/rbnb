@@ -1,9 +1,10 @@
 class LodgingsController < ApplicationController
   def index
-    @lodging = Lodging.all
+    @lodgings = Lodging.all
   end
 
   def show
+    @lodging = Lodging.find(params[:id])
   end
 
   def new

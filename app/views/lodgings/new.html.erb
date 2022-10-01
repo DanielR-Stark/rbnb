@@ -1,0 +1,9 @@
+<%= form_with model: @lodging do |f| %>
+  <%= f.label :home_type %>
+  <%= f.text_field :home_type %>
+  <%= f.label :total_occupancy %>
+  <%= f.number_field :total_occupancy %>
+  <%= f.label :summary %>
+  <%= f.text_field :summary %>
+  <%= f.submit %>
+<% end %>

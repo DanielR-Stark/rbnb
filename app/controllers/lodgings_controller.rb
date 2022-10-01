@@ -42,7 +42,7 @@ class LodgingsController < ApplicationController
     @lodging = Lodging.find(params[:id])
   end
 
-  def restaurant_params
+  def lodging_params
     params.require(:lodging).permit(:name)
   end
 end

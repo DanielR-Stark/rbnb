@@ -46,5 +46,3 @@ class ReservationsController < ApplicationController
     params.require(:reservation).permit(:name)
   end
 end
-
-end

@@ -7,6 +7,7 @@ class ReservationsController < ApplicationController
   end
 
   def show
+    @reservation = Reservation.find(params[:id])
   end
 
   def new
@@ -46,6 +47,6 @@ class ReservationsController < ApplicationController
   end
 
   def reservation_params
-    params.require(:reservation).permit(:name)
+    params.require(:reservation).permit(:start_date, :end_date, :price, :pet_age, :pet_size, :pet_description)
   end
 end

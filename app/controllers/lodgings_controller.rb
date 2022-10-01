@@ -18,7 +18,7 @@ class LodgingsController < ApplicationController
     @lodging = Lodging.new(lodging_params)
     @lodging.user = current_user
     if @lodging.save
-      redirect_to @lodging
+      redirect_to lodging_path(@lodging)
     else
       render :new
     end
@@ -26,13 +26,14 @@ class LodgingsController < ApplicationController
 
   def update
     if @lodging.update(lodging_params)
-      redirect_to @lodging
+      redirect_to lodging_path(@lodging)
     else
       render :edit
     end
   end
 
   def destroy
+    @lodging = Lodging.find(params[:id])
     @lodging.destroy
     redirect_to lodgings_path
   end
@@ -44,6 +45,6 @@ class LodgingsController < ApplicationController
   end
 
   def lodging_params
-    params.require(:lodging).permit(:name)
+    params.require(:lodging).permit(:summary)
   end
 end

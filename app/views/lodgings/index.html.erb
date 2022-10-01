@@ -1,5 +1,9 @@
+<h2>lodgings</h2>
+
 <ul>
   <% @lodgings.each do |lodging| %>
-    <li><%= lodging.home_type %></li>
+    <li><%= lodging.summary %><%= link_to "Ver",  %></li>
   <% end %>
 </ul>
+
+<a class="btn btn-primary" href="lodgings/new">Registrar nuevo lodging</a>

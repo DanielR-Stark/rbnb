@@ -1,27 +1,20 @@
-<%= form_with model: @lodging do |f| %>
-  <%= f.label :home_type %>
-  <%= f.text_field :home_type %>
-  <%= f.label :total_occupancy %>
-  <%= f.number_field :total_occupancy %>
-  <%= f.label :summary %>
-  <%= f.text_field :summary %>
-  <%= f.check_box :park_dog %>
-  <%= f.label :park_dog %>
-  <%= f.check_box :park_cat %>
-  <%= f.label :park_cat %>
-  <%= f.check_box :bath_service %>
-  <%= f.label :bath_service %>
-  <%= f.check_box :walk_service %>
-  <%= f.label :walk_service %>
-  <%= f.check_box :special_care %>
-  <%= f.label :special_care %>
-  <%= f.check_box :place_with_animals %>
-  <%= f.label :place_with_animals %>
-  <%= f.label :price %>
-  <%= f.text_field :price %>
-  <%= f.label :animals_taken_care_of %>
-  <%= f.text_field :animals_taken_care_of %>
-  <%= f.submit %>
-<% end %>
+<div class="container">
 
-<%= link_to "Volver al listado", lodgings_path %>
+  <h1 class="log-in"> Registra tu Hogar</h1>
+
+  <%= simple_form_for  @lodging do |f| %>
+    <%= f.input :home_type %>
+    <%= f.input :total_occupancy %>
+    <%= f.input :summary %>
+    <%= f.input :park_dog, as: :boolean %>
+    <%= f.input :park_cat, as: :boolean  %>
+    <%= f.input :bath_service, as: :boolean %>
+    <%= f.input :walk_service, as: :boolean %>
+    <%= f.input :special_care, as: :boolean %>
+    <%= f.input :place_with_pets, as: :boolean %>
+    <%= f.input :price %>
+    <%= f.input :animals_taken_care_of %>
+    <%= f.submit class: "btn btn-primary" %>
+  <% end %>
+  <%= link_to "Volver al listado", lodgings_path %>
+</div>

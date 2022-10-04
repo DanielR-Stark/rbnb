@@ -2,8 +2,9 @@
 
 <ul>
   <% @lodgings.each do |lodging| %>
-    <li><%= lodging.summary %>
+    <li><%= lodging.summary %> <%= link_to "ver", lodging_path(lodging.id) %>
   <% end %>
 </ul>
 
 <a class="btn btn-primary" href="lodgings/new">Registrar nuevo lodging</a>
+<%= link_to "Home", root_path %>

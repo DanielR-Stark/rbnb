@@ -5,3 +5,15 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+
+# db/seeds.rb
+
+puts "Creating restaurants..."
+
+10.times do
+  lodging.create (
+    home_type:
+    summary:
+  )
+end
+puts "Finished!"

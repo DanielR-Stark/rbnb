@@ -1,24 +1,17 @@
 <h1>Please enter the details about your reservation</h1>
 
-<%= form_with model: @reservations do |f| %>
-  <%= f.label :start_date %>
-  <%= f.text_field :start_date %>
-  <%= f.date_field :end_date %>
-  <%= f.date_field :end_date %>
-  <%= f.label :price %>
-  <%= f.number_field :price %>
-  <%= f.label :total %>
-  <%= f.number_field :total %>
+  <div class="container">
+  <%= simple_form_for [@lodging, @reservation] do |f| %>
+    <%= f.input :start_date %>
+    <%= f.input :end_date, as: :date %>
+    <br>
+    <br>
+    <h1>Pet details</h1>
+    <%= f.input :pet_age, as: :integer %>
+    <%= f.input :pet_size %>
+    <%= f.input :pet_description%>
+    <%= f.submit "Reservar", class: "btn btn-primary" %>
+  <% end %>
+  </div>
 
-  <hr>
-
-  <h1>Pet details</h1>
-
-  <%= f.label :pet_age %>
-  <%= f.number_field :pet_age %>
-  <%= f.label :pet_size %>
-  <%= f.number_field :pet_size %>
-  <%= f.label :pet_description %>
-  <%= f.text_field :pet_description %>
-  <%= f.submit %>
-<% end %>
+<%= link_to "Volver al lodging", lodging_path(params[:lodging_id]) %>

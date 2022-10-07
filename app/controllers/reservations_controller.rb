@@ -35,13 +35,13 @@ class ReservationsController < ApplicationController
 
   def destroy
     @reservation.destroy
-    redirect_to  lodging_path
+    redirect_to lodging_path
   end
 
   private
 
   def set_reservation
-    @reservation = Reservation.find(params[:lodging_id])
+    @lodging = Lodging.find(params[:lodging_id])
   end
 
   def reservation_params

@@ -1,5 +1,6 @@
 <h2><%= @lodging.summary %></h2>
 <p><%= @lodging.total_occupancy %></p>
+<p><%= @lodging.price %></p>
 
 
 <%= link_to "Delete",
@@ -9,3 +10,12 @@
 
 <%= link_to "Volver al listado", lodgings_path %>
 <%= link_to "Reservar", new_lodging_reservation_path(@lodging.id) %>
+<br>
+<br>
+
+
+<h2> Reservas </h2>
+<% @lodging.reservations.each do |reservation| %>
+   <%= reservation.pet_description %><%= link_to "ver", lodging_reservation_path(@lodging.id, reservation.id) %>
+   <br>
+<% end %>

@@ -1,6 +1,6 @@
 .container-card {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 
 
@@ -38,4 +38,18 @@
   background-color: #F2A2D6;
   color: white;
 
+}
+
+.card .btn-home {
+  border-radius: 25px;
+  background-color: #0583F2;
+  text-decoration: none;
+
+}
+
+.btn-home{
+  border-radius: 25px;
+  background-color: #0583F2;
+  text-decoration: none;
+  color: white;
 }

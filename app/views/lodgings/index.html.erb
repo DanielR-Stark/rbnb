@@ -1,17 +1,23 @@
-<h2>lodgings</h2>
+<h1 class="log-in">Lodgings</h1>
 
+<div class= "container-card">
 <% @lodgings.each do |lodging| %>
+
 <div class="card" style="width: 18rem;">
   <img class="card-img-top" src="https://www.guarderiacandyspets.com/wp-content/uploads/2020/01/47e548d2-d49d-4c71-b6ea-1dd26d76c5ee-1-1024x768.jpg" alt="Card image cap">
   <div class="card-body">
-    <h5 class="card-title"><%= lodging.name %></h5>
-    <p class="card-text"><%= lodging.summary %> <</p>
-    <a href="#" class="btn btn-primary"><%= link_to "ver", lodging_path(lodging.id) %></li>
-</a>
+    <h5 class="card-title"><%= lodging.name  %></h5>
+    <p class="card-text"><%= lodging.summary %> </p>
+    <button class="btn btn-home"> <%= link_to "ver", lodging_path(lodging.id), class: "btn-home"%> </button>
   </div>
 </div>
+
 <% end %>
+</div>
+<br>
 
 
-<a class="btn btn-primary" href="lodgings/new">Registrar nuevo lodging</a>
-<a><%= link_to "Home", root_path %></a>
+<a class="btn btn-home" href="lodgings/new">Registrar nuevo lodging</a>
+<br>
+
+<button class="btn btn-home"> <%= link_to "Home" , root_path, class: "btn-home"%> </button>

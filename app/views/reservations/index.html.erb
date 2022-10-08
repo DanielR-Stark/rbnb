@@ -1,8 +1,11 @@
-<h2> Reservas </h2>
+<h1 class="log-in"> Reservas </h1>
 <% @reservations.each do |reservation| %>
-   <%= reservation.pet_description %>
-   <%= reservation.id %>
+   <p>Description: <%= reservation.pet_description %></p>
+   <p>Fecha de entrada: <%= reservation.start_date %></p>
+   <p>Fecha de salida: <%= reservation.end_date %></p>
+   <p>Dias de estancia: <%= ((reservation.end_date - reservation.start_date).to_i) %></p>
    <br>
+
 <% end %>
 
 

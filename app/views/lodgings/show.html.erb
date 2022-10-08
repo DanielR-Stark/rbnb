@@ -1,12 +1,17 @@
-<h2><%= @lodging.summary %></h2>
-<p><%= @lodging.total_occupancy %></p>
-<p><%= @lodging.price %></p>
+<h1 class = "log-in"><%= @lodging.name %></h1>
+
+<div class ="show">
+<img src="https://lh3.googleusercontent.com/p/AF1QipNRy9bA5JecqQ62pfBckzULhnx-oAFe6YF4ttOP=w768-h768-n-o-v1" alt="NAWA">
+<p><%= @lodging.summary %></p>
+<p> Camas disponibles: <%= @lodging.total_occupancy %></p>
+<p> Precio:  <%= @lodging.price %></p>
 
 <% if current_user.id == @lodging.user_id %>
-  <%= link_to "Delete",
+   <%= link_to "Delete",
     lodging_path(@lodging),
     data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
 <% end %>
 
-<%= link_to "Volver al listado", lodgings_path %>
-<%= link_to "Reservar", new_lodging_reservation_path(@lodging.id) %>
+<button class="btn btn-home"> <%= link_to "Volver al listado", lodgings_path, class: "btn-home" %> </button>
+<button class="btn btn-home"> <%= link_to "Reservar", new_lodging_reservation_path(@lodging.id),class: "btn-home" %> </button>
+</div>

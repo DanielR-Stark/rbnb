@@ -1,5 +1,9 @@
 <h2> Reservas </h2>
 <% @reservations.each do |reservation| %>
    <%= reservation.pet_description %>
+   <%= reservation.id %>
    <br>
 <% end %>
+
+
+<%= link_to "Volver al listado", lodgings_path %>

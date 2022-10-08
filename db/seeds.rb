@@ -8,12 +8,12 @@
 
 # db/seeds.rb
 
-puts "Creating restaurants..."
+# puts "Creating restaurants..."
 
-10.times do
-  lodging.create (
-    home_type:
-    summary:
-  )
-end
-puts "Finished!"
+# 10.times do
+#  lodging.create (
+#    home_type:
+#    summary:
+#  )
+# end
+# puts "Finished!"

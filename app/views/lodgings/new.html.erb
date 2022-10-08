@@ -3,18 +3,20 @@
   <h1 class="log-in"> Registra tu Hogar</h1>
 
   <%= simple_form_for  @lodging do |f| %>
+    <%= f.input :name %>
     <%= f.input :home_type %>
-    <%= f.input :total_occupancy %>
+    <%= f.input :total_occupancy, as: :integer %>
     <%= f.input :summary %>
+    <%= f.input :address %>
     <%= f.input :park_dog, as: :boolean %>
     <%= f.input :park_cat, as: :boolean  %>
     <%= f.input :bath_service, as: :boolean %>
     <%= f.input :walk_service, as: :boolean %>
     <%= f.input :special_care, as: :boolean %>
     <%= f.input :place_with_pets, as: :boolean %>
-    <%= f.input :price %>
+    <%= f.input :price, as: :integer %>
     <%= f.input :animals_taken_care_of %>
-    <%= f.submit class: "btn btn-primary" %>
+    <%= f.submit "Crear", class: "btn btn-primary" %>
   <% end %>
   <%= link_to "Volver al listado", lodgings_path %>
 </div>

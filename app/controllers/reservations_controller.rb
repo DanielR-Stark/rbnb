@@ -1,9 +1,8 @@
 class ReservationsController < ApplicationController
-
   before_action :set_reservation, only: %i[show edit update destroy]
 
   def index
-    @reservation = Reservation.all
+    @reservations = Reservation.where(user_id: current_user.id)
   end
 
   def show
@@ -11,6 +10,7 @@ class ReservationsController < ApplicationController
   end
 
   def new
+    @lodging = Lodging.find(params[:lodging_id])
     @reservation = Reservation.new
   end
 
@@ -18,10 +18,12 @@ class ReservationsController < ApplicationController
   end
 
   def create
+    @lodging = Lodging.find(params[:lodging_id])
     @reservation = Reservation.new(reservation_params)
+    @reservation.lodging = @lodging
     @reservation.user = current_user
     if @reservation.save
-      redirect_to reservation_path(@reservation)
+      redirect_to lodging_path(@lodging)
     else
       render :new
     end
@@ -29,7 +31,7 @@ class ReservationsController < ApplicationController
 
   def update
     if @reservation.update(reservation_params)
-      redirect_to reservation_path(@reservation)
+      redirect_to lodging_path(@lodging)
     else
       render :edit
     end
@@ -37,16 +39,16 @@ class ReservationsController < ApplicationController
 
   def destroy
     @reservation.destroy
-    redirect_to reservations_path
+    redirect_to lodging_path
   end
 
   private
 
   def set_reservation
-    @reservation = Reservation.find(params[:id])
+    @lodging = Lodging.find(params[:lodging_id])
   end
 
   def reservation_params
-    params.require(:reservation).permit(:start_date, :end_date, :price, :pet_age, :pet_size, :pet_description)
+    params.require(:reservation).permit(:start_date, :end_date, :pet_age, :pet_size, :pet_description)
   end
 end

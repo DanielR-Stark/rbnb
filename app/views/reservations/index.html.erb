@@ -1,5 +1,9 @@
-<ul>
-  <% @reservations.each do |reservation| %>
-    <li><%= reservation.user_id, reservation.start_date, reservation.end_date, reservation.total %></li>
-  <% end %>
-</ul>
+<h2> Reservas </h2>
+<% @reservations.each do |reservation| %>
+   <%= reservation.pet_description %>
+   <%= reservation.id %>
+   <br>
+<% end %>
+
+
+<%= link_to "Volver al listado", lodgings_path %>

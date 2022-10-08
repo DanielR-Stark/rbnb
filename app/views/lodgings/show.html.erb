@@ -1,8 +1,12 @@
-<h2><%= @lodging.home_type %></h2>
+<h2><%= @lodging.summary %></h2>
 <p><%= @lodging.total_occupancy %></p>
-<p><%= @lodging.summary%></p>
+<p><%= @lodging.price %></p>
 
-<%= link_to "Delete",
-  lodging_path(@lodging),
-  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
-%>
+<% if current_user.id == @lodging.user_id %>
+  <%= link_to "Delete",
+    lodging_path(@lodging),
+    data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+<% end %>
+
+<%= link_to "Volver al listado", lodgings_path %>
+<%= link_to "Reservar", new_lodging_reservation_path(@lodging.id) %>

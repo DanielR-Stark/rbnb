@@ -1,3 +1,17 @@
-<h2><%= @reservation.start_date %></h2>
+<h1><%= @lodging.summary %></h1>
+
+<h2>Fecha de entrada</h2>
+<p><%= @reservation.start_date %></p>
+
+<h2>Fecha de salida</h2>
 <p><%= @reservation.end_date %></p>
-<p><%= @reservation.total%></p>
+
+
+<h2>Precio total</h2>
+<p>Dias de estancia: <%= ((@reservation.end_date - @reservation.start_date).to_i) %></p>
+
+<p>Precio: <%= (@lodging.price).to_i %></p>
+
+<p>Total a pagar: <%= (@lodging.price).to_i * ((@reservation.end_date - @reservation.start_date).to_i) %></p>
+
+<%= link_to "volver al lodging", lodging_path(@lodging.id) %>

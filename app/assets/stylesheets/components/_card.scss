@@ -25,8 +25,6 @@
   line-height: 1.2;
 }
 
-
-
 .container-card .btn-home {
   border-radius: 25px;
   background-color: #0583F2;
@@ -35,29 +33,41 @@
 }
 
 .container-card .btn-home:hover {
-  background-color: #F2A2D6;
-  color: white;
-
-}
-
-.card .btn-home {
   border-radius: 25px;
-  background-color: #0583F2;
-  text-decoration: none;
-
+  background-color: #82bbf0;
+  color: white;
 }
+
 
 .btn-home{
-  border-radius: 25px;
   background-color: #0583F2;
-  text-decoration: none;
   color: white;
+  border-radius: 8px;
+  border-style: none;
+  box-sizing: border-box;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  height: 40px;
+  line-height: 20px;
+  list-style: none;
+  margin: 0;
+  outline: none;
+  padding: 10px 16px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  transition: color 100ms;
+  vertical-align: baseline;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
 }
 
-
-.show .btn-home {
-  border-radius: 25px;
-  background-color: #0583F2;
-  text-decoration: none;
+.btn-home:hover,
+.btn-home:focus {
+  background-color: #82bbf0;
   color: white;
 }

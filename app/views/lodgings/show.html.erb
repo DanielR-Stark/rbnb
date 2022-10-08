@@ -1,17 +1,19 @@
 <h1 class = "log-in"><%= @lodging.name %></h1>
 
-<div class ="show">
-<img src="https://lh3.googleusercontent.com/p/AF1QipNRy9bA5JecqQ62pfBckzULhnx-oAFe6YF4ttOP=w768-h768-n-o-v1" alt="NAWA">
-<p><%= @lodging.summary %></p>
-<p> Camas disponibles: <%= @lodging.total_occupancy %></p>
-<p> Precio:  <%= @lodging.price %></p>
+<div class ="index">
+  <div>
+    <img src="https://lh3.googleusercontent.com/p/AF1QipNRy9bA5JecqQ62pfBckzULhnx-oAFe6YF4ttOP=w768-h768-n-o-v1" alt="NAWA">
+    <p><%= @lodging.summary %></p>
+    <p> Camas disponibles: <%= @lodging.total_occupancy %></p>
+    <p> Precio:  <%= @lodging.price %></p>
 
-<% if current_user.id == @lodging.user_id %>
-   <%= link_to "Delete",
-    lodging_path(@lodging),
-    data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
-<% end %>
+    <% if current_user.id == @lodging.user_id %>
+      <%= link_to "Delete",
+          lodging_path(@lodging),
+          data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "btn-home" %>
+    <% end %>
+  </div>
 
-<button class="btn btn-home"> <%= link_to "Volver al listado", lodgings_path, class: "btn-home" %> </button>
-<button class="btn btn-home"> <%= link_to "Reservar", new_lodging_reservation_path(@lodging.id),class: "btn-home" %> </button>
+<%= link_to "Volver al listado", lodgings_path, class: "btn-home", class: "btn-home" %>
+<%= link_to "Reservar", new_lodging_reservation_path(@lodging.id), class: "btn-home" %>
 </div>

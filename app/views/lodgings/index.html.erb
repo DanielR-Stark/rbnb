@@ -8,7 +8,7 @@
   <div class="card-body">
     <h5 class="card-title"><%= lodging.name  %></h5>
     <p class="card-text"><%= lodging.summary %> </p>
-    <button class="btn btn-home"> <%= link_to "ver", lodging_path(lodging.id), class: "btn-home"%> </button>
+    <a> <%= link_to "ver", lodging_path(lodging.id), class: "btn-home"%> </a>
   </div>
 </div>
 
@@ -16,8 +16,4 @@
 </div>
 <br>
 
-
-<a class="btn btn-home" href="lodgings/new">Registrar nuevo lodging</a>
-<br>
-
-<button class="btn btn-home"> <%= link_to "Home" , root_path, class: "btn-home"%> </button>
+<%= link_to "Crear nuevo lodging" , new_lodging_path, class: "btn-home"%>

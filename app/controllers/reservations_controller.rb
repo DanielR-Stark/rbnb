@@ -3,6 +3,7 @@ class ReservationsController < ApplicationController
 
   def index
     @reservations = Reservation.where(user_id: current_user.id)
+    # @lodging = Lodging.find(@reservations.lodging_id)
   end
 
   def show

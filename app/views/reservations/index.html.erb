@@ -4,8 +4,11 @@
    <p>Fecha de entrada: <%= reservation.start_date %></p>
    <p>Fecha de salida: <%= reservation.end_date %></p>
    <p>Dias de estancia: <%= ((reservation.end_date - reservation.start_date).to_i) %></p>
+   <p>id de lodging: <%= reservation.lodging_id %></p>
    <br>
 
 <% end %>
 
-<button class="btn btn-home"> <%= link_to "Volver al listado", lodgings_path, class: "btn-home" %> </button>
+<div>
+<%= link_to "Volver al listado", lodgings_path, class: "btn-home" %>
+</div>

@@ -10,8 +10,8 @@
     <%= f.input :pet_age, as: :integer %>
     <%= f.input :pet_size %>
     <%= f.input :pet_description%>
-    <%= f.submit "Reservar", class: "btn btn-primary" %>
+    <%= f.submit "Reservar", class: "btn-home"  %>
   <% end %>
   </div>
-
-<%= link_to "Volver al lodging", lodging_path(params[:lodging_id]) %>
+<br>
+<%= link_to "Volver al lodging", lodging_path(params[:lodging_id]), class: "btn-home"  %>

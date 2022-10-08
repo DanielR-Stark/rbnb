@@ -2,7 +2,11 @@
 
 <ul>
   <% @lodgings.each do |lodging| %>
-    <li><%= lodging.summary %> <%= link_to "ver", lodging_path(lodging.id) %>
+    <li><h2><%= lodging.name %></h2>
+    <br>
+    <%= lodging.summary %>
+    <%= link_to "ver", lodging_path(lodging.id) %></li>
+
   <% end %>
 </ul>
 

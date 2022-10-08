@@ -45,6 +45,8 @@ class LodgingsController < ApplicationController
   end
 
   def lodging_params
-    params.require(:lodging).permit(:summary)
+    params.require(:lodging).permit(:animals_taken_care_of, :summary, :name, :home_type, :total_occupancy,
+                                    :address, :park_dog, :park_cat, :bath_service, :walk_service, :special_care,
+                                    :place_with_pets, :price)
   end
 end

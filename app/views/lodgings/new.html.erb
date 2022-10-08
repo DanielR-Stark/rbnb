@@ -3,6 +3,7 @@
   <h1 class="log-in"> Registra tu Hogar</h1>
 
   <%= simple_form_for  @lodging do |f| %>
+    <%= f.input :name %>
     <%= f.input :home_type %>
     <%= f.input :total_occupancy, as: :integer %>
     <%= f.input :summary %>

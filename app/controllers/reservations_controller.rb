@@ -1,6 +1,10 @@
 class ReservationsController < ApplicationController
   before_action :set_reservation, only: %i[show edit update destroy]
 
+  def index
+    @reservations = Reservation.where(user_id: current_user.id)
+  end
+
   def show
     @reservation = Reservation.find(params[:id])
   end
